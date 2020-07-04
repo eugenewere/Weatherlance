@@ -57,6 +57,16 @@ body {
     width: 100%;
     overflow-y: hidden;
 }
+@media screen and (max-width: 922px) {
+    .containerr{
+        overflow-y: scroll;
+    }
+    .pp{
+        padding-right: 14rem;
+    }
+}
+
+
 
 .weather-side {
     position: relative;
@@ -325,7 +335,7 @@ body {
     -webkit-transform-origin: 50% 100%;
     -webkit-transform: rotateZ(-75deg);
     left: 110px;
-    bottom: 0;
+    bottom: 48px;
 }
 .sun-times .sun-symbol-path .symbol:first-child {
     position: relative;
@@ -360,7 +370,7 @@ body {
     width: 10px;
     /* right: 0; */
     left: 280px;
-    top: -14px;
+    top: -61px;
     color: yellow;
     transform: rotate(245deg);
     transform-origin: center;

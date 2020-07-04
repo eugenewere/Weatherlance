@@ -37,7 +37,7 @@
                     <h1 class="weather-temp ">°C</h1>
                 </span>
                 <span class="d-flex ">
-                    <h3 class="weather-desc w-desc"></h3>
+                    <h3 style="width: min-content;" class="weather-desc w-desc"></h3>
                     <img style="height: 37px; margin-left: 5px;" id="mytodayimg" src="">
                 </span>
             </div>
@@ -46,7 +46,7 @@
         <div class="col-sm-12 col-md-12 col-lg-8 vh-100 overflow-hidden">
             <div class="info-side">
                 <div class="location-container">
-                    <button class="location-button myshadow2"> <i data-feather="map-pin"></i><span>Change location</span></button>
+                    <button style="outline: none" data-toggle="modal" data-target="#exampleModal" id="chngelocation" class="location-button myshadow2 "> <i class="fas fa-map-marker-alt"></i><span> Change location</span></button>
                 </div>
                 <div class="week-container">
                     <ul id="forecst" class="week-list">
@@ -80,89 +80,90 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12 ">
-                        <div class="row">
+                        <div class="d-flex flex-lg-row flex-md-column flex-md-column-reverse">
                             <div class="col-sm-12 col-md-12 col-lg-8 ">
-                                <div class="sunmoon mr-auto">
+                                <div class="sunmoon mr-lg-auto ml-lg-0 mx-md-auto py-md-5">
     <!--                        <h2>Sun &amp; Moon</h2>-->
-                            <div class="sun-times">
-                                <div class="sun-path">
-                                    <div class="sun-animation"></div>
+                                    <div class="sun-times">
+                                        <div class="sun-path">
+                                            <div class="sun-animation"></div>
 
+                                        </div>
+                                        <div class="sun-symbol-path">
+                                            <span class="symbol">☀</span>
+            <!--                                <span class="symbol"><i class="fas fa-moon"></i></span>-->
+                                        </div>
+                                    </div>
+                                    <div class="legend">
+                                        <div class="sunrise"></div>
+                                        <div class="sunset"></div>
+                                        <span class="moonn"><i class="fas fa-moon"></i></span>
+                                    </div>
+                                    <div class="clear">&nbsp;</div>
                                 </div>
-                                <div class="sun-symbol-path">
-                                    <span class="symbol">☀</span>
-    <!--                                <span class="symbol"><i class="fas fa-moon"></i></span>-->
-                                </div>
-                            </div>
-                            <div class="legend">
-                                <div class="sunrise"></div>
-                                <div class="sunset"></div>
-                                <span class="moonn"><i class="fas fa-moon"></i></span>
-                            </div>
-                            <div class="clear">&nbsp;</div>
-                        </div>
                             </div>
                             <div class="col-sm-12 col-md-12 col-lg-4 pt-4">
-                                <div class="sunr d-flex align-items-center mb-4">
-                                    <span style="font-size: 33px;" >☀</span>
-                                    <p class="mb-0">Sunrise </p>
-                                    <span class="sunrise1 pl-2"></span>
+                                <div class="d-flex flex-lg-column flex-md-row justify-content-md-center py-md-5 ">
+                                    <div style="   justify-content: flex-end;  padding-right: 41px;" class="sunr d-flex align-items-center mb-lg-4">
+                                        <span style="font-size: 33px;" >☀</span>
+                                        <p class="mb-0">Sunrise </p>
+                                        <span class="sunrise1 pl-2"></span>
+                                    </div>
+                                    <div style="  justify-content: flex-end;  padding-right: 41px;" class="sunr d-flex align-items-center">
+                                        <span style="font-size: 33px; padding: 5px; color: yellow;" ><i class="fas fa-moon"></i></span>
+                                        <p class="mb-0">Sunset </p>
+                                        <span class="sunset1 pl-2"></span>
+                                    </div>
                                 </div>
-                                <div class="sunr d-flex align-items-center">
-                                    <span style="font-size: 33px; padding: 5px;" ><i class="fas fa-moon"></i></span>
-                                    <p class="mb-0">Sunset </p>
-                                    <span class="sunset1 pl-2"></span>
-                                </div>
-
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-12 ">
                         <div class="row">
-                            <div class="col-sm-12 col-md-12 col-lg-4  d-flex flex-column justify-content-center">
+                            <div class="col-sm-12 col-md-12 col-lg-4 py-md-5 mt-md-5 d-flex flex-lg-column flex-md-row justify-content-center">
                                 <div class="sunr d-flex align-items-center ml-4 mb-4">
-                                    <span style="font-size: 33px;" ><i class="fas fa-wind"></i> </span>
+                                    <span style="font-size: 33px; color: yellow;" ><i class="fas fa-wind"></i> </span>
                                     <p class="mb-0 mr-2 ml-2">Chills</p>
                                     <span class="wind_chils"></span>
                                 </div>
                                  <div class="sunr d-flex align-items-center ml-4 mb-4">
-                                    <span style="font-size: 33px;" ><i class="fas fa-tachometer-alt"></i> </span>
+                                    <span style="font-size: 33px; color: yellow;" ><i class="fas fa-tachometer-alt"></i> </span>
                                     <p class="mb-0 mr-2 ml-2">Wind Speed </p>
                                     <span class="wind_speed"></span>
                                 </div>
                                  <div class="sunr d-flex align-items-center ml-4 mb-4">
-                                    <span style="font-size: 33px;" ><i class="fas fa-compass"></i> </span>
+                                    <span style="font-size: 33px; color: yellow;" ><i class="fas fa-compass"></i> </span>
                                     <p class="mb-0 mr-2 ml-2">Direction </p>
                                     <span class="wind_direction"></span>
                                 </div>
 
                             </div>
-                            <div class="col-sm-12 col-md-12 col-lg-8 " style="height: 500px;">
+                            <div class="col-sm-12 col-md-12 col-lg-8 pp" style="height: 500px;">
                                 <div id="windmill">
-                            <div class="tip"></div>
-                            <div class="frame">
-                                <div class="window window1"></div>
-                                <div class="window window2"></div>
-                            </div>
-                            <div class="spinner">
-                                <div class="blade blade1">
-                                    <div></div>
-                                </div>
-                                <div class="blade blade2">
-                                    <div></div>
-                                </div>
-                                <div class="blade blade3">
-                                    <div></div>
-                                </div>
-                                <div class="blade blade4">
-                                    <div></div>
-                                </div>
-                            </div>
-                            <div class="circle">
-                                <div class="circle inner"></div>
-                            </div>
+                                    <div class="tip"></div>
+                                    <div class="frame">
+                                        <div class="window window1"></div>
+                                        <div class="window window2"></div>
+                                    </div>
+                                    <div class="spinner">
+                                        <div class="blade blade1">
+                                            <div></div>
+                                        </div>
+                                        <div class="blade blade2">
+                                            <div></div>
+                                        </div>
+                                        <div class="blade blade3">
+                                            <div></div>
+                                        </div>
+                                        <div class="blade blade4">
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div class="circle">
+                                        <div class="circle inner"></div>
+                                    </div>
 
-                        </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -172,20 +173,52 @@
 
     </div>
 </section>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="padding: 5px 18px;">
+                <h6 class="modal-title" id="exampleModalLabel">Enter City Name</h6>
+                <button id="closeit" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="form-group w-100">
+                            <label for="cityinput">City*</label>
+                            <input type="text" class="form-control form-control-sm" id="cityinput" aria-describedby="emailHelp">
+<!--                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button disabled id="submitbtn" type="button" class="btn btn-sm btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+    </div>
+</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="static/bootstrap-4.5.0-dist/js/jquery-3.5.1.slim.min.js" ></script>
+<script src="static/bootstrap-4.5.0-dist/js/jquery-3.5.1.min.js" ></script>
 <script src="static/bootstrap-4.5.0-dist/js/popper.min.js" ></script>
 <script src="static/bootstrap-4.5.0-dist/js/bootstrap.min.js" ></script>
 <script src="static/moments.js" ></script>
+<script type="text/javascript" src="https://raw.githubusercontent.com/eugenewere/morph-element/master/morph-element-morfy/dist/index.js"></script>
+<script type="text/javascript" src="static/geoinint.js"></script>
+<!--http://maps.googleapis.com/maps/api/geocode/json?client=xxxxx-->
+<!--https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyC886mxAecWx2j4HFBObnrt0A_XSl2WZd8-->
+
+<!--<script src="static/geoinint.js" ></script>-->
 <script>
     // feather.replace();
 </script>
 <script src="static/crypto.js" ></script>
 <script src="static/main.js" ></script>
 <script>
-    // $('[data-toggle="tooltip"]').tooltip('show');
+
     $('[data-toggle="tooltip"]').tooltip();
 </script>
 </body>
