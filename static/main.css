@@ -1,0 +1,580 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
+:root {
+    --gradient: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
+    --boxshadow: 10px 10px 5px #1c2028, -7px -6px 6px #484b4d;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.myshadow{
+    box-shadow: var(--boxshadow);
+}
+.myshadow2{
+    box-shadow: 10px 10px 5px #1c2028, -6px -7px 7px #484b4d;
+}
+.weekicon{
+    font-size: 29px;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: 1.25em;
+}
+
+.clear {
+    clear: both;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #343d4b;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.containerr {
+    border-radius: 0px;
+    -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+    background-color: #222831;
+    color: #ffffff;
+    height: 100%;
+    padding: 18px;
+    width: 100%;
+    overflow-y: hidden;
+}
+
+.weather-side {
+    position: relative;
+    height: 100%;
+    border-radius: 25px;
+    background-image: url("https://images.unsplash.com/photo-1559963110-71b394e7494d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
+    -webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease;
+    -o-transition: transform 300ms ease;
+    transition: transform 300ms ease;
+    transition: transform 300ms ease, -webkit-transform 300ms ease;
+    -webkit-transform: translateZ(0) scale(1.02) perspective(1000px);
+    transform: translateZ(0) scale(1.02) perspective(1000px);
+
+}
+
+.weather-side:hover {
+    -webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
+    transform: scale(1.1) perspective(1500px) rotateY(20deg);
+}
+
+.weather-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: var(--gradient);
+    border-radius: 25px;
+    opacity: 0.8;
+    box-shadow: var(--boxshadow);
+}
+
+.date-container {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+}
+
+.date-dayname {
+    margin: 0;
+}
+
+.date-day {
+    display: block;
+}
+
+.location {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.location-icon {
+    display: inline-block;
+    height: 0.8em;
+    width: auto;
+    margin-right: 5px;
+}
+
+.weather-container {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+
+}
+/*.weather-container:not(:nth-child(1)) {*/
+/*    box-shadow: var(--boxshadow);*/
+/*    */
+/*}*/
+
+.weather-icon.feather {
+    height: 60px;
+    width: auto;
+}
+
+.weather-temp {
+    margin: 0;
+    font-weight: 700;
+    font-size: 4em;
+}
+
+.weather-desc {
+    margin: 0;
+}
+
+.info-side {
+    position: relative;
+    /* float: left; */
+    height: 100vh;
+    padding-top: 25px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.today-info {
+    padding: 15px;
+    margin: 0 25px 25px 25px;
+    /* 	box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
+    border-radius: 10px;
+}
+
+.today-info>div:not(:last-child) {
+    margin: 0 0 10px 0;
+}
+
+.today-info>div .title {
+    float: left;
+    font-weight: 700;
+}
+
+.today-info>div .value {
+    float: right;
+}
+
+.week-list {
+    list-style-type: none;
+    padding: 27px 13px;
+    /* margin: 10px 35px; */
+    -webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--boxshadow);
+    border-radius: 10px;
+    overflow-y: hidden;
+    height: 220px;
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+}
+.clod{
+    display: flex;
+    justify-content: center;
+    padding: 4px 0;
+}
+
+.week-list>li {
+    flex-basis: 10%;
+    padding: 15px;
+    cursor: pointer;
+    -webkit-transition: 200ms ease;
+    -o-transition: 200ms ease;
+    transition: 200ms ease;
+    border-radius: 10px;
+}
+
+.week-list>li:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    background: #fff;
+    color: #222831;
+    -webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
+}
+
+.week-list>li.active {
+    background: #fff;
+    color: #222831;
+    border-radius: 10px;
+}
+
+.week-list>li .day-name {
+    display: block;
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+
+.week-list>li .day-icon {
+    display: block;
+    height: 30px;
+    width: auto;
+    margin: 0 auto;
+}
+
+.week-list>li .day-temp {
+    display: block;
+    text-align: center;
+    margin: 10px 0 0 0;
+    font-weight: 700;
+}
+
+.location-container {
+    padding: 25px 35px;
+}
+.week-container{
+    padding: 25px 35px;
+}
+.week-container{
+    width: 100%;
+    overflow: hidden;
+    height: max-content;
+}
+
+.location-button {
+    outline: none;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    background-image: var(--gradient);
+    color: #ffffff;
+    font-weight: 700;
+    /*-webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);*/
+    /*box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);*/
+    cursor: pointer;
+    -webkit-transition: -webkit-transform 200ms ease;
+    transition: -webkit-transform 200ms ease;
+    -o-transition: transform 200ms ease;
+    transition: transform 200ms ease;
+    transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+
+.location-button:hover {
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.location-button .feather {
+    height: 1em;
+    width: auto;
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+/*sunrisesunset*/
+.sunmoon {
+    position: relative;
+    width: max-content;
+}
+.sunmoon > div {
+    margin-left: 10px;
+}
+
+.sun-times {
+    margin-top: 40px;
+    width: 311px;
+    height: 97px;
+    border-bottom: 1px solid #999;
+    overflow-y: hidden;
+}
+.sun-times .sun-path {
+    /*border: dotted;*/
+    margin-left: 25px;
+    width: 260px;
+    height: 216px;
+    overflow: hidden;
+    border: 3px dotted #999;
+    border-radius: 50%;
+}
+.sun-times .sun-symbol-path {
+    position: absolute;
+    color: yellow;
+    text-shadow: 0 0 5px black;
+    height: 85px;
+    -webkit-transition: -webkit-transform 2s linear;
+    -webkit-transform-origin: 50% 100%;
+    -webkit-transform: rotateZ(-75deg);
+    left: 110px;
+    bottom: 0;
+}
+.sun-times .sun-symbol-path .symbol:first-child {
+    position: relative;
+    font-size: 16px;
+    top: -8px;
+}
+.sun-times .sun-symbol-path .symbol:last-child {
+    position: relative;
+    font-size: 16px;
+    top: -8px;
+}
+.sun-times .sun-animation {
+    width: 0px;
+    height: 150px;
+    background-color: rgba(255, 255, 0, 0.9);
+    -webkit-transition: width 2s linear;
+    transition: width 2s linear;
+}
+
+.legend {
+    position: absolute;
+    bottom: 1em;
+}
+.legend > div {
+    position: absolute;
+    font-size: 12px;
+    width: 80px;
+}
+.legend .moonn {
+    position: absolute;
+    font-size: 12px;
+    width: 10px;
+    /* right: 0; */
+    left: 280px;
+    top: -14px;
+    color: yellow;
+    transform: rotate(245deg);
+    transform-origin: center;
+}
+.legend .sunrise {
+    left: 15px;
+    top: 18px;
+}
+.legend .sunset {
+    left: 270px;
+    top: 18px;
+}
+.controls {
+    margin-top: 50px;
+}
+
+/*sunrisesunset*/
+
+
+/*windmillD*/
+.spinner {
+    position: relative;
+    top: 180px;
+    height: 20px;
+}
+
+#windmill {
+    position: relative;
+    top: 180px;
+    left: 66%;
+    transform: scale(0.5) translateX(-50px);
+    width: 62px;
+    /*margin-right: 8px !important;*/
+}
+
+.circle {
+    position: absolute;
+    top: 38px;
+    left: 24px;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 40px;
+}
+
+.inner {
+    height: 20px;
+    width: 20px;
+    left: 10px;
+    top: 10px;
+    background-color: #a71316;
+}
+
+
+.tip {
+    height: 120px;
+    width: 89px;
+    background-color: #444951;
+    border-top-left-radius: 290px;
+    border-top-right-radius: 290px;
+}
+
+.frame {
+    position: absolute;
+    top: 100px;
+    height: 313px;
+    width: 90px;
+    background-color: #444951;
+}
+
+.base {
+    position: absolute;
+    top: 400px;
+    height: 50px;
+    width: 200px;
+    background-color: #221713;
+}
+
+.window {
+    position: absolute;
+    top: 50px;
+    left: 33px;
+    height: 60px;
+    width: 25px;
+    background-color: #63656d;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+.window2 {
+    top: 150px;
+}
+
+.blade1, .blade2 {
+    width: 300px;
+    height: 25px;
+    background-color: white;
+    position: relative;
+
+}
+
+.blade3, .blade4 {
+    width: 25px;
+    height: 300px;
+    background-color: white;
+    position: relative;
+}
+.blade1 {
+    top: -249px;
+    left: 48px;
+    animation: spinBlade1 10s infinite linear;
+}
+
+.blade2 {
+    top: -280px;
+    left: -247px;
+    animation: spinBlade2 10s infinite linear;
+}
+
+.blade3 {
+    top: -584px;
+    left: 28px;
+    animation: spinBlade3 10s infinite linear;
+}
+
+.blade4 {
+    top: -592px;
+    left: 20px;
+    animation: spinBlade4 10s infinite linear;
+}
+
+.blade1 > div, .blade2 > div  {
+    width: 200px;
+    height: 60px;
+}
+
+.blade1 > div {
+    position: relative;
+    top: 24px;
+    left: 100px;
+    background: #F3E4CE;
+}
+
+.blade2 > div {
+    position: relative;
+    top: -60px;
+    background: #F3E4CE;
+}
+
+.blade3 > div, .blade4 > div {
+    width: 60px;
+    height: 200px;
+}
+
+.blade3 > div {
+    position: relative;
+    left: 25px;
+    background: #F3E4CE;
+}
+
+.blade4 > div {
+    position: relative;
+    left: -59px;
+    top: 100px;
+    background: #F3E4CE;
+}
+
+
+@keyframes spinBlade1 {
+    from {
+        transform-origin: 0% 50%;
+        transform: rotate(0deg);
+    } to {
+          transform-origin: 0% 50%;
+          transform: rotate(-360deg);
+      }
+}
+
+@keyframes spinBlade2 {
+    from {
+        transform-origin: 100% 50%;
+        transform: rotate(0deg);
+        /*transform:*/
+    } to {
+          transform-origin: 100% 50%;
+          transform: rotate(-360deg);
+      }
+}
+
+@keyframes spinBlade3 {
+    from {
+        transform-origin: 50% 100%;
+        transform: rotate(0deg);
+        /*transform:*/
+    } to {
+          transform-origin: 50% 100%;
+          transform: rotate(-360deg);
+      }
+}
+
+@keyframes spinBlade4 {
+    from {
+        transform-origin: 50% 0%;
+        transform: rotate(0deg);
+        /*transform:*/
+    } to {
+          transform-origin: 50% 0%;
+          transform: rotate(-360deg);
+      }
+}
+
+@keyframes bgChange {
+    to {
+        background-color: #292828;
+    }
+}
+/*windmillD*/

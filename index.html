@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/16d33ecbbb.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/main.css">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+<section class="vh-100 w-100">
+    <div class="containerr row m-0">
+        <div class="col-sm-12 col-md-12 col-lg-4 h-100">
+            <div class="weather-side">
+            <div class="weather-gradient"></div>
+            <div class="date-container">
+                <span class="d-flex align-items-center" style="font-size: 23px;">
+                    <i class="fas fa-map-marker-alt"  style='margin-right: 5px'></i>
+                    <span class="d-flex align-items-end">
+                        <h2 class="date-dayname ctynm">Nakuru</h2>
+                        <small class="px-1 region">Kenya (Rift Valley)</small>
+                    </span>
+                </span>
+
+                <span class="date-day mt-2 day-text"></span>
+
+                <span class="location date-txt"></span>
+            </div>
+            <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+                <span class="d-flex ">
+                    <h1 class="weather-temp w-temp">29</h1>
+                    <h1 class="weather-temp ">°C</h1>
+                </span>
+                <span class="d-flex ">
+                    <h3 class="weather-desc w-desc"></h3>
+                    <img style="height: 37px; margin-left: 5px;" id="mytodayimg" src="">
+                </span>
+            </div>
+        </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-8 vh-100 overflow-hidden">
+            <div class="info-side">
+                <div class="location-container">
+                    <button class="location-button myshadow2"> <i data-feather="map-pin"></i><span>Change location</span></button>
+                </div>
+                <div class="week-container">
+                    <ul id="forecst" class="week-list">
+                        <div id="cleat" class="clear"></div>
+                    </ul>
+                </div>
+                <div class="today-info-container">
+                    <div class="today-info">
+                        <div class="precipitation">
+                            <span class="title">PRESURE</span>
+                            <span id="preas" class="value"></span>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="humidity">
+                            <span class="title">HUMIDITY</span>
+                            <span id="humid" class="value"></span>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="wind">
+                            <span class="title">Raisin</span>
+                            <span id="rasin" class="value"></span>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="wind">
+                            <span class="title">Visibility</span>
+                            <span id="visibilit" class="value"></span>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 ">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-8 ">
+                                <div class="sunmoon mr-auto">
+    <!--                        <h2>Sun &amp; Moon</h2>-->
+                            <div class="sun-times">
+                                <div class="sun-path">
+                                    <div class="sun-animation"></div>
+
+                                </div>
+                                <div class="sun-symbol-path">
+                                    <span class="symbol">☀</span>
+    <!--                                <span class="symbol"><i class="fas fa-moon"></i></span>-->
+                                </div>
+                            </div>
+                            <div class="legend">
+                                <div class="sunrise"></div>
+                                <div class="sunset"></div>
+                                <span class="moonn"><i class="fas fa-moon"></i></span>
+                            </div>
+                            <div class="clear">&nbsp;</div>
+                        </div>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-4 pt-4">
+                                <div class="sunr d-flex align-items-center mb-4">
+                                    <span style="font-size: 33px;" >☀</span>
+                                    <p class="mb-0">Sunrise </p>
+                                    <span class="sunrise1 pl-2"></span>
+                                </div>
+                                <div class="sunr d-flex align-items-center">
+                                    <span style="font-size: 33px; padding: 5px;" ><i class="fas fa-moon"></i></span>
+                                    <p class="mb-0">Sunset </p>
+                                    <span class="sunset1 pl-2"></span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 ">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-4  d-flex flex-column justify-content-center">
+                                <div class="sunr d-flex align-items-center ml-4 mb-4">
+                                    <span style="font-size: 33px;" ><i class="fas fa-wind"></i> </span>
+                                    <p class="mb-0 mr-2 ml-2">Chills</p>
+                                    <span class="wind_chils"></span>
+                                </div>
+                                 <div class="sunr d-flex align-items-center ml-4 mb-4">
+                                    <span style="font-size: 33px;" ><i class="fas fa-tachometer-alt"></i> </span>
+                                    <p class="mb-0 mr-2 ml-2">Wind Speed </p>
+                                    <span class="wind_speed"></span>
+                                </div>
+                                 <div class="sunr d-flex align-items-center ml-4 mb-4">
+                                    <span style="font-size: 33px;" ><i class="fas fa-compass"></i> </span>
+                                    <p class="mb-0 mr-2 ml-2">Direction </p>
+                                    <span class="wind_direction"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-8 " style="height: 500px;">
+                                <div id="windmill">
+                            <div class="tip"></div>
+                            <div class="frame">
+                                <div class="window window1"></div>
+                                <div class="window window2"></div>
+                            </div>
+                            <div class="spinner">
+                                <div class="blade blade1">
+                                    <div></div>
+                                </div>
+                                <div class="blade blade2">
+                                    <div></div>
+                                </div>
+                                <div class="blade blade3">
+                                    <div></div>
+                                </div>
+                                <div class="blade blade4">
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="circle">
+                                <div class="circle inner"></div>
+                            </div>
+
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="static/bootstrap-4.5.0-dist/js/jquery-3.5.1.slim.min.js" ></script>
+<script src="static/bootstrap-4.5.0-dist/js/popper.min.js" ></script>
+<script src="static/bootstrap-4.5.0-dist/js/bootstrap.min.js" ></script>
+<script src="static/moments.js" ></script>
+<script>
+    // feather.replace();
+</script>
+<script src="static/crypto.js" ></script>
+<script src="static/main.js" ></script>
+<script>
+    // $('[data-toggle="tooltip"]').tooltip('show');
+    $('[data-toggle="tooltip"]').tooltip();
+</script>
+</body>
+</html>
