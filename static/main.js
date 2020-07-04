@@ -83,7 +83,7 @@ function initWeather() {
     var consumer_key = 'dj0yJmk9R1FwbUJiWjZ6QUZtJmQ9WVdrOVVuUTNjRnA2TXpRbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PWEx';
     var consumer_secret = '21316e0492bb2916f3a9134d2c616d1ba92a3dd6';
     var concat = '&';
-    var locaton = (namee) ? namee : localStorage.getItem('city');
+    var locaton = (namee) ? namee : ((localStorage.getItem('city') ? localStorage.getItem('city'):'nakuru'));
     var query = {
         'location': locaton,
         'format': 'json',
